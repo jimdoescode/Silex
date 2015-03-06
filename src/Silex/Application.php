@@ -258,6 +258,19 @@ class Application extends \Pimple implements HttpKernelInterface, TerminableInte
     {
         return $this['controllers']->delete($pattern, $to);
     }
+    
+    /**
+     * Maps a OPTIONS request to a callable.
+     *
+     * @param string $pattern Matched route pattern
+     * @param mixed  $to      Callback that returns the response when matched
+     *
+     * @return Controller
+     */
+    public function options($pattern, $to = null)
+    {
+        return $this['controllers']->options($pattern, $to);
+    }
 
     /**
      * Maps a PATCH request to a callable.
